@@ -20,9 +20,9 @@ public class CategoryController {
         return service.readAll();
     }
 
-    @GetMapping("/{id}")
-    public Category readById(@PathVariable("id") Integer id) throws Exception{
-        return service.readById(id);
+    @GetMapping("idCategory ")
+    public Category readById(@PathVariable Integer idCategory) throws Exception{
+        return service.readById(idCategory);
     }
 
     @PostMapping
@@ -30,14 +30,14 @@ public class CategoryController {
         return service.save(category);
     }
 
-    @PutMapping
-    public Category update(@RequestBody Category category) throws Exception {
+    @PutMapping("/{id}")
+    public Category update(@PathVariable("id") Integer id, @RequestBody Category category) throws Exception {
+        category.setIdCategory(id);
         return service.save(category);
     }
-
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable ("id") Integer id) throws Exception {
-         service.delete(id);
+    @DeleteMapping("/{idCategory}")
+    public void delete(@PathVariable Integer idCategory) throws Exception {
+         service.delete(idCategory);
     }
 
 
