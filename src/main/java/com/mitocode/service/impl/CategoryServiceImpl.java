@@ -2,20 +2,26 @@ package com.mitocode.service.impl;
 
 import com.mitocode.model.Category;
 import com.mitocode.repository.ICategoryRepo;
+import com.mitocode.repository.IGenericRepo;
+import com.mitocode.service.ICRUD;
 import com.mitocode.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class CategoryServiceImpl implements ICategoryService {
+public class CategoryServiceImpl extends CRUDImpl<Category, Integer> implements ICategoryService {
 
     @Autowired
-    private ICategoryRepo repo;
+    private ICategoryRepo repo; //llamado al ICategoryRepo de manera simplificada con anotacion @Autowired
 
     @Override
+    protected IGenericRepo<Category, Integer> getRepo() {
+        return repo;
+    }
+
+  /*  @Override
     public Category save(Category category) throws Exception {
         return repo.save(category);
     }
@@ -41,5 +47,5 @@ public class CategoryServiceImpl implements ICategoryService {
     @Override
     public void delete(Integer id) throws Exception {
         repo.deleteById(id);
-    }
+    }*/
 }
