@@ -16,7 +16,7 @@ public class Client {
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCliente;
+    private Integer idClient;
     @Column(length = 150, nullable = false)
     private String firstName;
     @Column(length = 150, nullable = false)
