@@ -57,10 +57,9 @@ public class CategoryController {
 //        category.setIdCategory(id);
 //        return service.save(category);
 //    }
-    @DeleteMapping("/{idCategory}")
-    public ResponseEntity<Void> delete(@PathVariable Integer idCategory) throws Exception {
-         service.delete(idCategory);
-            System.out.println("eliminar"+idCategory);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id")  Integer id) throws Exception {
+         service.delete(id);
          return new ResponseEntity<>(HttpStatus.OK);
     }
 
