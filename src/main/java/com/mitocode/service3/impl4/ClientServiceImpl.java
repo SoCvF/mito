@@ -1,14 +1,11 @@
-package com.mitocode.service.impl;
+package com.mitocode.service3.impl4;
 
-import com.mitocode.model.Category;
-import com.mitocode.model.Client;
-import com.mitocode.repository.IClientRepo;
-import com.mitocode.repository.IGenericRepo;
-import com.mitocode.service.IClientService;
+import com.mitocode.model1.Client;
+import com.mitocode.repository2.IClientRepo;
+import com.mitocode.repository2.IGenericRepo;
+import com.mitocode.service3.IClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ClientServiceImpl extends CRUDImpl<Client, Integer> implements IClientService {

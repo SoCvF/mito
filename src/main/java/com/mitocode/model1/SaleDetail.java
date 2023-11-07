@@ -1,9 +1,8 @@
-package com.mitocode.model;
+package com.mitocode.model1;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter

@@ -1,6 +1,6 @@
-package com.mitocode.service;
+package com.mitocode.service3;
 
-import com.mitocode.model.Category;
+import com.mitocode.model1.Category;
 
 public interface ICategoryService extends ICRUD<Category, Integer>{
 

@@ -1,7 +1,6 @@
-package com.mitocode.repository;
+package com.mitocode.repository2;
 
-import com.mitocode.model.Client;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.mitocode.model1.Client;
 
 public interface IClientRepo extends IGenericRepo<Client, Integer> {
 }

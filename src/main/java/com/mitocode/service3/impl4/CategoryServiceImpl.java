@@ -1,14 +1,11 @@
-package com.mitocode.service.impl;
+package com.mitocode.service3.impl4;
 
-import com.mitocode.model.Category;
-import com.mitocode.repository.ICategoryRepo;
-import com.mitocode.repository.IGenericRepo;
-import com.mitocode.service.ICRUD;
-import com.mitocode.service.ICategoryService;
+import com.mitocode.model1.Category;
+import com.mitocode.repository2.ICategoryRepo;
+import com.mitocode.repository2.IGenericRepo;
+import com.mitocode.service3.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CategoryServiceImpl extends CRUDImpl<Category, Integer> implements ICategoryService {

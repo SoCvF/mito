@@ -1,7 +1,6 @@
-package com.mitocode.service;
+package com.mitocode.service3;
 
-import com.mitocode.model.Category;
-import com.mitocode.model.Client;
+import com.mitocode.model1.Client;
 
 public interface IClientService extends ICRUD<Client, Integer> {
     //hola

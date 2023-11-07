@@ -1,4 +1,4 @@
-package com.mitocode.model;
+package com.mitocode.model1;
 
 import lombok.*;
 

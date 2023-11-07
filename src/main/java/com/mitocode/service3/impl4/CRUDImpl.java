@@ -1,11 +1,16 @@
-package com.mitocode.service.impl;
+package com.mitocode.service3.impl4;
 
 
-import com.mitocode.repository.IGenericRepo;
-import com.mitocode.service.ICRUD;
+import com.mitocode.repository2.IGenericRepo;
+import com.mitocode.service3.ICRUD;
 
 import java.util.List;
 
+
+/*En esta CLASE GENERICA CRUDIMPL se IMPLEMENTARA los metodos de la INTERFAZ GENERICA ICRUD
+* IMPLEMENTANDO SUS METODOS Y ELABORANDO LA LOGICA sobreescribiendo los metodos creado en
+* la interfaz ICRUD
+**/
 public abstract class CRUDImpl<T, ID> implements ICRUD<T,ID> {
 
     protected abstract IGenericRepo<T,ID> getRepo();
