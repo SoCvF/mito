@@ -6,6 +6,7 @@ import com.mitocode.model1.Client;
 import com.mitocode.service3.IClientService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ public class ClientController {
     private IClientService service;
 
     @Autowired
+    @Qualifier("clientMapper")
     private ModelMapper mapper;
 
 //    @GetMapping

@@ -6,6 +6,7 @@ import com.mitocode.model1.Provider;
 import com.mitocode.service3.IProviderService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ public class ProviderController {
     private IProviderService service;
 
     @Autowired
+    @Qualifier("providerMapper")
     private ModelMapper mapper;
 
 //    @GetMapping

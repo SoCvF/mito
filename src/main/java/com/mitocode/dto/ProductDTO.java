@@ -17,7 +17,7 @@ public class ProductDTO {
 
     private Integer idProduct;
     @NotNull @Min(value = 1)
-    private Integer idCategoria;
+    private Integer idCategory;
     @NotNull @NotEmpty @Size(min = 3, max = 50)
     private String name;
     @NotNull @NotEmpty @Size(min = 3, max = 150)

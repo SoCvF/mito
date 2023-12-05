@@ -1,6 +1,6 @@
 package com.mitocode.repository2;
 
-import com.mitocode.model1.Role;
+import com.mitocode.model1.User;
 
-public interface IRoleRepo extends IGenericRepo<Role, Integer> {
+public interface IUserRepo extends IGenericRepo<User, Integer> {
 }

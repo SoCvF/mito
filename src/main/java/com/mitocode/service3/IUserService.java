@@ -1,7 +1,7 @@
 package com.mitocode.service3;
 
-import com.mitocode.model1.Role;
+import com.mitocode.model1.User;
 
-public interface IRolService extends ICRUD<Role, Integer> {
+public interface IUserService extends ICRUD<User, Integer> {
     //hola
 }

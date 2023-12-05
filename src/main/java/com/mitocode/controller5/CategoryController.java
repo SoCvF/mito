@@ -6,6 +6,7 @@ import com.mitocode.model1.Category;
 import com.mitocode.service3.ICategoryService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ public class CategoryController {
     private ICategoryService service;
 
     @Autowired
+    @Qualifier("categoryMapper")
     private ModelMapper mapper;
 
 //    @GetMapping
@@ -68,7 +70,7 @@ public class CategoryController {
     despues retornará un mapper llamando al OBJ y almacenandolo en un CATEGORYDTO*/
     @PostMapping
     public ResponseEntity<CategoryDTO> create(@Valid @RequestBody CategoryDTO dto) throws Exception {
-        Category obj = service.save(mapper.map(dto,Category.class));//El mapper transforma de DTO a un CATEGORY ya que el SERVICE espera un CATE RGORY y no un CATEGORYDTO
+        Category obj = service.save(mapper.map(dto,Category.class));//El mapper transforma de DTO a un CATEGORY ya que el SERVICE espera un MODEL CATERGORY y no un CATEGORYDTO
         return new ResponseEntity<>(mapper.map(obj, CategoryDTO.class), HttpStatus.CREATED);
     }
 

@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 
-@ControllerAdvice
+@ControllerAdvice///AÑADIR LA ANOTACION CONTROLLER PARA QUE SPRING SEPA QUE ES UNA CLASE QUE SE UTILIZA PARA MANEJAR EXCEPCIONES
 public class GlobalErrorHandler extends ResponseEntityExceptionHandler {
 
     //SE ESTÁ MANEJANDO LA CLASE "EXCEPTION" QUE ES LA CLASE EXCEPTION GENERAL POR SI SALTA UN EXCEPCIÓN NO MAPEADA O CONTROLADA
