@@ -26,7 +26,7 @@ public class Product {
     @Column(length = 150, nullable = false)
     private String description;
 
-    //es un numero de 6 cifras de las cuales 2 son decimales
+    //es un número de 6 cifras de las cuales 2 son decimales
     @Column(columnDefinition = "decimal(6,2)", nullable = false)
     private double price;
 

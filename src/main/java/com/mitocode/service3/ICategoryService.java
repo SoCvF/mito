@@ -2,12 +2,14 @@ package com.mitocode.service3;
 
 import com.mitocode.model1.Category;
 
+import java.util.List;
+
 public interface ICategoryService extends ICRUD<Category, Integer>{
 
-//    Cliente save(Cliente category) throws Exception;
-    //
-//    Cliente update(Cliente category) throws Exception;
-//    List<Cliente> readAll() throws Exception;
-//    Cliente readById(Integer id) throws Exception;
-//    void delete(Integer id)throws Exception;
+
+    List<Category> findByName(String name);
+
+    List<Category>findByNameContainsAndEnabled(String name, boolean enabled);
+
+    List<Category>getByNameAndAndDescription3();
 }

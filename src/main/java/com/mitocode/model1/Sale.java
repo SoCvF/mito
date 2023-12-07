@@ -38,7 +38,7 @@ public class Sale {
 
 
 //SE ESTA FORZANDO QUE AL MOMENTO QUE SE INSERTE DATOS ESTE LO HAGA EN AMBAS PARTES(SALE DETAILS)
-    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SaleDetail> details;
 
 

@@ -7,42 +7,33 @@ import com.mitocode.service3.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CategoryServiceImpl extends CRUDImpl<Category, Integer> implements ICategoryService {
 
     @Autowired
-    private ICategoryRepo repo; //llamado al ICategoryRepo de manera simplificada con anotacion @Autowired
+    private ICategoryRepo repo;
 
     @Override
     protected IGenericRepo<Category, Integer> getRepo() {
         return repo;
     }
 
-  /*  @Override
-    public Category save(Category category) throws Exception {
-        return repo.save(category);
+    @Override
+    public List<Category> findByName(String name) {
+        return repo.findByNameContains(name);
     }
 
     @Override
-    public Category update(Category category) throws Exception {
-        return repo.save(category);
+    public List<Category> findByNameContainsAndEnabled(String name, boolean enabled) {
+        return repo.findByNameContainsAndEnabled(name, enabled);
     }
 
     @Override
-    public List<Category> readAll() throws Exception {
-        return repo.findAll();
+    public List<Category> getByNameAndAndDescription3() {
+        return repo.getByNameAndAndDescription3();
     }
 
-    @Override
-    public Category readById(Integer id) throws Exception {
-        //Optional<Category>op = repo.findById(id);
-       // return op.isPresent() ? op.get() : new Category();
-       // return op.orElse(new Category());
-       return repo.findById(id).orElse(new Category());
-    }
 
-    @Override
-    public void delete(Integer id) throws Exception {
-        repo.deleteById(id);
-    }*/
 }

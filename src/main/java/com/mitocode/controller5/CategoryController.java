@@ -64,10 +64,10 @@ public class CategoryController {
         return new ResponseEntity<>(obj,HttpStatus.OK);
     }
 
-    //La anotacion @VALID sirve para que las restricciones que esten asociadas a las clases se respeten "activa la anotacion"
-    /*Se está enviando un objeto de tipo CATEGORYDTO
-    Luego se instancia un CATEGORY para almacenarlo dentro de un OBJ y almacenandolo en el dto y mandando un CATEGORY
-    despues retornará un mapper llamando al OBJ y almacenandolo en un CATEGORYDTO*/
+    /*La anotacion @VALID sirve para que las restricciones que esten asociadas a las clases se respeten "activa la anotacion"
+     Se está enviando un objeto de tipo CATEGORYDTO
+     Luego se instancia un CATEGORY para almacenarlo dentro de un OBJ y almacenandolo en el dto y mandando un CATEGORY
+     despues retornará un mapper llamando al OBJ y almacenandolo en un CATEGORYDTO*/
     @PostMapping
     public ResponseEntity<CategoryDTO> create(@Valid @RequestBody CategoryDTO dto) throws Exception {
         Category obj = service.save(mapper.map(dto,Category.class));//El mapper transforma de DTO a un CATEGORY ya que el SERVICE espera un MODEL CATERGORY y no un CATEGORYDTO
@@ -98,6 +98,26 @@ public class CategoryController {
     public ResponseEntity<Void> delete(@PathVariable("id")  Integer id) throws Exception {
          service.delete(id);
          return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /////////////////////////////////////////////Queries//////////////////////////////////////
+
+    @GetMapping("/find/name/{name}")
+    public ResponseEntity<List<CategoryDTO>>findByName(@PathVariable("name") String name){
+      List<CategoryDTO> lst = service.findByName(name).stream().map(cat->mapper.map(cat, CategoryDTO.class)).collect(Collectors.toList());
+        return new ResponseEntity<>(lst, HttpStatus.OK);
+    }
+
+    @GetMapping("/find/name")
+    public ResponseEntity<List<CategoryDTO>>findByNameAndEnabled(@RequestParam("name") String name, @RequestParam("status") boolean status){
+        List<CategoryDTO> lst = service.findByNameContainsAndEnabled(name,status).stream().map(cat->mapper.map(cat, CategoryDTO.class)).collect(Collectors.toList());
+        return new ResponseEntity<>(lst, HttpStatus.OK);
+    }
+
+    @GetMapping("/get/name/description3")
+    public ResponseEntity<List<CategoryDTO>>getByNameAndAndDescription3() throws Exception{
+        List<CategoryDTO> lst = service.getByNameAndAndDescription3().stream().map(cat->mapper.map(cat, CategoryDTO.class)).collect(Collectors.toList());
+        return new ResponseEntity<>(lst, HttpStatus.OK);
     }
 
 }
